@@ -1,0 +1,153 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi amorcito</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #fce4ec; /* Rosa claro, puedes cambiarlo */
+            color: #4a148c; /* Morado oscuro, puedes cambiarlo */
+            margin: 20px;
+            padding: 20px;
+            overflow-x: hidden; /* Evita el scroll horizontal si los corazones se salen */
+        }
+        h1 {
+            color: #880e4f; /* Rosa oscuro, puedes cambiarlo */
+        }
+        .message {
+            margin: 30px auto;
+            max-width: 600px;
+            line-height: 1.6;
+            font-size: 1.1em;
+        }
+        .photo-gallery {
+            display: flex; /* Usa flexbox para alinear las imágenes en una fila */
+            justify-content: center; /* Centra las imágenes horizontalmente */
+            flex-wrap: wrap; /* Permite que las imágenes salten de línea si no caben */
+            margin: 30px auto;
+            max-width: 1000px; /* Ancho máximo para la galería de fotos */
+        }
+        .photo-gallery figure {
+            margin: 15px; /* Espacio alrededor de cada imagen y su descripción */
+            text-align: center;
+            max-width: 300px; /* Asegura que cada figura no sea demasiado grande */
+        }
+        .photo-gallery img {
+            width: 100%; /* La imagen ocupa el ancho máximo de su contenedor (figure) */
+            height: auto;
+            border: 3px solid #880e4f; /* Borde de las fotos */
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+            display: block; /* Para eliminar el espacio extra debajo de las imágenes */
+        }
+        .photo-gallery figcaption {
+            font-size: 0.95em;
+            color: #7b1fa2; /* Color para el texto de la descripción */
+            margin-top: 8px; /* Espacio entre la imagen y el texto */
+        }
+        .spotify-player {
+            margin: 40px auto;
+            max-width: 500px;
+        }
+        footer {
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #7b1fa2;
+        }
+
+        /* --- Estilos para los corazones --- */
+        .heart-container {
+            position: fixed; /* Para que flote sobre el contenido */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; /* Cubre toda la ventana */
+            pointer-events: none; /* Permite clics a través de ellos */
+            overflow: hidden; /* Oculta los corazones que se salen de la pantalla */
+            z-index: -1; /* Envía los corazones al fondo, detrás del contenido */
+        }
+
+        .heart {
+            position: absolute;
+            color: red; /* Color de los corazones */
+            font-size: 2em; /* Tamaño de los corazones */
+            animation: floatHeart 10s linear infinite; /* Animación de flotación */
+            opacity: 0; /* Inicialmente invisibles */
+            /* Randomizar posición inicial horizontalmente */
+            left: calc(var(--i) * 10vw + 5vw); /* Distribuye los corazones horizontalmente */
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh); /* Empiezan desde abajo de la pantalla */
+                opacity: 0;
+            }
+            10% {
+                opacity: 1; /* Se vuelven visibles */
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-20px); /* Terminan arriba, fuera de la pantalla */
+                opacity: 0;
+            }
+        }
+
+        /* Variación en el tiempo de inicio para cada corazón */
+        .heart:nth-child(1) { animation-delay: 0s; }
+        .heart:nth-child(2) { animation-delay: 1.5s; }
+        .heart:nth-child(3) { animation-delay: 3s; }
+        .heart:nth-child(4) { animation-delay: 4.5s; }
+        .heart:nth-child(5) { animation-delay: 6s; }
+        .heart:nth-child(6) { animation-delay: 7.5s; }
+        /* Puedes añadir más si agregas más <span> para corazones */
+
+    </style>
+</head>
+<body>
+
+    <div class="heart-container">
+        <span class="heart" style="--i:1;">❤️</span>
+        <span class="heart" style="--i:2;">❤️</span>
+        <span class="heart" style="--i:3;">❤️</span>
+        <span class="heart" style="--i:4;">❤️</span>
+        <span class="heart" style="--i:5;">❤️</span>
+        <span class="heart" style="--i:6;">❤️</span>
+        </div>
+
+    <h1>¡Para la persona más hermosa de mi vida!</h1>
+
+    <div class="message">
+        <p>Mi amor,</p>
+        <p>Mi mundo se lleno de alegria y color, gracias a ti mi amor y aun que la espera para poder verte cada dia es menos quiero que sepas que eres la mujer de mi corazon </p>
+        <p>¡Siempre tuyo!</p>
+        <p>Enrique Blas</p>
+    </div>
+
+    <div class="photo-gallery">
+        <figure>
+            <img src="fotos/marycielo1.jpg" alt="La mujer de mi corazon">
+            <figcaption>La mujer de mi corazon</figcaption>
+        </figure>
+        <figure>
+            <img src="fotos/enrique1.jpg" alt="Un simple mortal">
+            <figcaption>Un simple mortal</figcaption>
+        </figure>
+        <figure>
+            <img src="fotos/marycielo2.jpg" alt="La mujer que da color a mi vida">
+            <figcaption>La mujer que da color a mi vida</figcaption>
+        </figure>
+        </div>
+
+    <div class="spotify-player">
+        </div>
+
+    <footer>
+        <p>Hecho con mucho cariño para ti.</p>
+    </footer>
+
+</body>
+</html>
